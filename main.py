@@ -1,17 +1,13 @@
 print("Hello world")
-word = input("Введите слово: ")
-wordLower = word.lower() 
-firstIndex = 0
-lastIndex = len(word) - 1
-tf = False
-for c in wordLower:
-    if(wordLower[firstIndex] == wordLower[lastIndex]):
-        tf = True
-    else:
-        tf = False
-        break
-    firstIndex += 1
-    lastIndex -= 1
+arr = [2, 15, 4, 90, 7, 10, 1, 0]
 
-if(tf): print(f"Word {word} is palindrome")
-else: print(f"Word {word} is not palindrome")
+for i in arr:
+    temp = 0
+    index = 0
+    for j in range(len(arr)-1):
+        if(arr[index] > arr[index+1]):
+            temp = arr[index]
+            arr[index] = arr[index+1]
+            arr[index+1] = temp
+        index+=1
+print(arr)
