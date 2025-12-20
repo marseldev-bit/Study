@@ -36,8 +36,9 @@
 # print(message)
 
 #2.11
+
 # Работа с методами strip(), lstrip(), rstrip()
-# name1 = ' Tom'
-# name2 = ' Wood '
-# name3 = 'Martin '
-# print(f"\t{name1.lstrip()}\n\t{name2.strip()}\n\t{name3.rstrip()}")
+name1 = ' Tom'
+name2 = ' Wood '
+name3 = 'Martin '
+print(f"\t{name1.lstrip()}\n\t{name2.strip()}\n\t{name3.rstrip()}")
