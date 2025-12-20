@@ -1,72 +1,64 @@
-# 3. Списки
+# 4 Работа со списками
 
-# 3.1
-# names = ['Artur', 'Daniel', 'Darina', 'Artem']
-# print(f'{names[0]}\t{names[1]}\t{names[-2]}\t{names[-1]}')
+# 4.1
+# pizzas = ['pepperoni', 'hawaii', 'spicy']
+# for pizza in pizzas:
+#     print(f"I like {pizza} pizza")
 
-# 3.2
-# names = ['Artur', 'Daniel', 'Darina', 'Artem']
-# print(f"Hi, {names[0]}. How it is going?")
-# print(f"Hi, {names[1]}. How it is going?")
-# print(f"Hi, {names[2]}. How it is going?")
-# print(f"Hi, {names[3]}. How it is going?")
+# print("\nI love pizza very much!")
 
-# 3.3
-# cars = ['Honda', 'Dodge', 'Toyota', 'Porsche', 'Mercedes-Benz']
-# print(f"I'd like to buy a car {cars[-2]}")
+# 4.2
+# animals = ['elephant', 'hippo', 'buffalo']
 
-# 3.4, 3.5, 3.6, 3.7
-# icons = ['Martin Eden', 'Maxim Mikhailov', 'Eminem', 'Robert Downey Jr.']
-# print(f"Hey, {icons[0]}, I'll glad to see you on my birthday!")
-# print(f"Hey, {icons[1]}, I'll glad to see you on my birthday!")
-# print(f"Hey, {icons[2]}, I'll glad to see you on my birthday!")
-# print(f"Hey, {icons[3]}, I'll glad to see you on my birthday!")
-# print(f"Hello, I'm {icons[0]}, I can't visit your birthday because I'm not a real person.")
-# icons[0] = 'Charlz Darwin'
-# print(icons)
-# print('I found a table that is bigger than previous')
-# icons.insert(0, "Walter O'Brien")
-# icons.insert(2, 'John Tolkien')
-# icons.append('Kyle Dickson')
-# print(icons)
-# print("Sorry, but there is no opportunity to deliver the new table to my birthday, so I can invite only 2 guests.")
-# print(f"I'm sorry about this, {icons.pop(0)}")
-# print(f"I'm sorry about this, {icons.pop(2)}")
-# print(f"I'm sorry about this, {icons.pop(2)}")
-# print(f"I'm sorry about this, {icons.pop(2)}")
-# print(f"I'm sorry about this, {icons.pop(2)}")
-# print(icons)
-# print(f"I'm still waiting you, {icons[0]}")
-# print(f"I'm still waiting you, {icons[1]}")
-# del icons[0]
-# del icons[0]
-# print(icons)
+# for animal in animals:
+#     print(f"{animal} is a big aninal")
 
-# 3.8
-# countries = ['Sweden', 'England', 'USA', 'Japan', 'France']
-# print(countries, sorted(countries), countries, sorted(countries, reverse=True), countries)
-# countries.reverse()
-# print(countries)
-# countries.reverse()
-# print(countries)
-# countries.sort()
-# print(countries)
-# countries.sort(reverse=True)
-# print(countries)
+# print("\nAny of this animals are big")
 
-# 3.9
-# icons = ['Martin Eden', 'Maxim Mikhailov', 'Eminem', 'Robert Downey Jr.']
-# print(f"{len(icons)} guests are invited")
+# 4.3
+# for i in range(1, 21): print(i)
 
-# 3.10 
-theFellowshipOfTheRing = ['Frodo', 'Sam', 'Pipin', 'Merry', 'Legolas', 'Gimli', 'Aragorn', 'Boromoir', 'Gandalf']
-print(theFellowshipOfTheRing)
-print(len(theFellowshipOfTheRing))
-print(sorted(theFellowshipOfTheRing))
-print(sorted(theFellowshipOfTheRing, reverse=True))
-theFellowshipOfTheRing.sort()
-theFellowshipOfTheRing.reverse()
-print(theFellowshipOfTheRing)
-theFellowshipOfTheRing.sort(reverse=True)
-print(theFellowshipOfTheRing)
+# 4.4
+# arr = list(range(1, 1000001))
+# for a in arr: print(a)
 
+# 4.5
+# arr = list(range(1, 1000001))
+# print(min(arr))
+# print(max(arr))
+# print(sum(arr))
+
+# 4.6
+# arr = list(range(1, 20, 2))
+# for a in arr: print(a)
+
+# 4.7
+# arr = list(range(3, 31, 3))
+# for a in arr: print(a)
+
+# 4.8, 4.9
+# cubes = [value**3 for value in range(1, 11)]
+# for cube in cubes:
+#     print(cube)
+
+# 4.10
+# dishes = ['burger', 'pizza', 'sushi', 'chocolate', 'marsmallow']
+# print(f"First 3 dishes:\n{dishes[:3]}")
+# print(f"\nMiddle 3 dishes:\n{dishes[1:4]}")
+# print(f"\nLast 3 dishes:\n{dishes[2:]}")
+
+# 4.11, 4.12
+# pizzas = ['pepperoni', 'hawaii', 'spicy']
+# friendPizzas = pizzas[:]
+# pizzas.append('ham')
+# friendPizzas.append('cheese')
+# print('My favorite pizzas:')
+# for pizza in pizzas: print(pizza)
+# print("\nMy friend's favorite pizzas:")
+# for pizza in friendPizzas: print(pizza)
+
+#4.13
+dish = ('soup', 'porridge', 'rice', 'beef', 'salad')
+for d in dish: print(d)
+dish = ('soup', 'fish', 'rice', 'beef', 'cheese')  
+for d in dish: print(d)
