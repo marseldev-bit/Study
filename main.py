@@ -1,16 +1,25 @@
-print("Hello world")
-arr = [10, 2, 10, 10, 10, 3, 4, 10, 4, 5, 19, 0]
+# Пример 1:
+s = "abcde"
+words = ['a', 'bb', 'acd', 'ace']
+
+# Пример 2:
+# s = "dsahjpjauf"
+# words = ['ahjpjau', 'ja', 'ahbwzgqnuk', 'tnmlanowax']
 
 index = 0
+count = 0
 
-while(index < len(arr)):
-    temp = 1
-    while((index+temp) < len(arr)):
-        if(arr[index] == arr[index+temp]):
-            del arr[index]
-            index-=1
+while(index < len(words)):
+    sCopy = s
+    temp = 0
+    for r in words[index]:
+        if r in sCopy:
+            temp+=1
+            f = sCopy.find(r)
+            sCopy = sCopy[:f]+sCopy[f+1:]
+        else:
             break
-        temp+=1
+    if(len(words[index]) == temp): count+=1
     index+=1
 
-print(arr)
+print(count)
