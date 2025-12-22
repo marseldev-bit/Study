@@ -1,64 +1,88 @@
-# 4 Работа со списками
+# 5. Оператор if
 
-# 4.1
-# pizzas = ['pepperoni', 'hawaii', 'spicy']
-# for pizza in pizzas:
-#     print(f"I like {pizza} pizza")
+# 5.1
+# sport = 'volleyball'
+# print("Is her favorite sport volleyball? I predict False")
+# print(sport == 'volleyball')
+# print("But I don't think her favorite sport is soccer. I predict False again")
+# print(sport == 'soccer')
 
-# print("\nI love pizza very much!")
+# 5.2
+# word = 'sword'
+# print(word=='sword')
+# print(word.upper=='Sword')
+# age = 18
+# print(age > 18)
+# players = ['jack', 'john', 'dustin']
+# if 'jack' in players: print("John, you'll play")
+# if 'mike' not in players: print("Mike, today you'll stay at home")
+# primaryNumbers = [7, 19]
+# if (primaryNumbers[0]/primaryNumbers[0]==1) and (primaryNumbers[1]/primaryNumbers[1]==1): print('Both numbers are primary')
+# primaryNumbers[0] = 16
+# if (primaryNumbers[0]/primaryNumbers[0]==1) or (primaryNumbers[1]/primaryNumbers[1]==1): print('At least one of this numbers is primary')
 
-# 4.2
-# animals = ['elephant', 'hippo', 'buffalo']
+# 5.3
+# alienColor = ['green', 'yellow', 'red']
+# if 'green' in alienColor: print('You got 5 points')
+# if 'blue' in alienColor: print('You got 5 points')
 
-# for animal in animals:
-#     print(f"{animal} is a big aninal")
+# 5.4
+# alienColor = ['green', 'yellow', 'red']
+# if 'green' in alienColor: print('You got 5 points')
+# else: print('You got 10 points')
+# if 'blue' in alienColor: print('You got 5 points')
+# else: print('You got 10 points')
 
-# print("\nAny of this animals are big")
+# 5.5
+# alienColor = ['green', 'yellow', 'red']
+# color = 'blue'
+# if color == 'green': print('You got 5 points')
+# elif color == 'yellow': print('You got 10 points')
+# elif color == 'red': print('You got 15 points')
+# else: print('You missed')
 
-# 4.3
-# for i in range(1, 21): print(i)
+# 5.6
+# age = 21
+# if age >= 2 and age < 4: print('baby')
+# elif age >= 4 and age < 13: print('kid')
+# elif age >= 13 and age < 20: print('teenager')
+# elif age >= 20 and age < 65: print('adult')
+# elif age >= 65: print('elderly') 
 
-# 4.4
-# arr = list(range(1, 1000001))
-# for a in arr: print(a)
+# 5.7
+# favoriteFruits = ['banana', 'apple', 'grape', 'orange']
+# if 'banana' in favoriteFruits: print('You love bananas very much!')
+# if 'passion fruit' in favoriteFruits: print('You love passion fruits very much!')
+# if 'peach' in favoriteFruits: print('You love peaches very much!')
+# if 'grape' in favoriteFruits: print('You love grape very much!')
 
-# 4.5
-# arr = list(range(1, 1000001))
-# print(min(arr))
-# print(max(arr))
-# print(sum(arr))
+# 5.8
+# users = ['max', 'admin', 'henry', 'alice', 'cobe']
+# for user in users:
+#     if user == 'admin': print(f"Hello, {user}, want to get the work status?")
+#     else: print(f"Hello, {user}, thanks for logining in our system")
 
-# 4.6
-# arr = list(range(1, 20, 2))
-# for a in arr: print(a)
+# 5.9
+# users = ['jessica']
+# if users:
+#     for user in users: print(f"Hello, {user}")
+# else: print("We need to add some users")
 
-# 4.7
-# arr = list(range(3, 31, 3))
-# for a in arr: print(a)
+# 5.10
+# currentUsers = ['mike', 'lukas', 'will', 'dustin', 'eleven']
+# newUsers = ['Max', 'Steve', 'Dustin', 'Mike', 'Nancy']
+# for user in newUsers:
+#     if user.lower() in currentUsers:
+#         print("You should choose other name")
+#     else: 
+#         print("Welcome!")
 
-# 4.8, 4.9
-# cubes = [value**3 for value in range(1, 11)]
-# for cube in cubes:
-#     print(cube)
-
-# 4.10
-# dishes = ['burger', 'pizza', 'sushi', 'chocolate', 'marsmallow']
-# print(f"First 3 dishes:\n{dishes[:3]}")
-# print(f"\nMiddle 3 dishes:\n{dishes[1:4]}")
-# print(f"\nLast 3 dishes:\n{dishes[2:]}")
-
-# 4.11, 4.12
-# pizzas = ['pepperoni', 'hawaii', 'spicy']
-# friendPizzas = pizzas[:]
-# pizzas.append('ham')
-# friendPizzas.append('cheese')
-# print('My favorite pizzas:')
-# for pizza in pizzas: print(pizza)
-# print("\nMy friend's favorite pizzas:")
-# for pizza in friendPizzas: print(pizza)
-
-#4.13
-dish = ('soup', 'porridge', 'rice', 'beef', 'salad')
-for d in dish: print(d)
-dish = ('soup', 'fish', 'rice', 'beef', 'cheese')  
-for d in dish: print(d)
+# 5.11
+# for num in range(1, 10):
+#     if num == 1:
+#         print(f"{num}st")
+#     elif num == 2:
+#         print(f"{num}nd")
+#     elif num == 3:
+#         print(f"{num}rd")
+#     else: print(f"{num}th")
