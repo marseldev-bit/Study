@@ -1,88 +1,137 @@
-# 5. Оператор if
+# 6. Словари
 
-# 5.1
-# sport = 'volleyball'
-# print("Is her favorite sport volleyball? I predict False")
-# print(sport == 'volleyball')
-# print("But I don't think her favorite sport is soccer. I predict False again")
-# print(sport == 'soccer')
+# 6.1
+# person = {'firstName': 'Simeon', 'lastName': 'Nikolov', 'age': 19, 'city': 'Novosibirsk'}
+# for key in person:
+#     print(person[key])
 
-# 5.2
-# word = 'sword'
-# print(word=='sword')
-# print(word.upper=='Sword')
-# age = 18
-# print(age > 18)
-# players = ['jack', 'john', 'dustin']
-# if 'jack' in players: print("John, you'll play")
-# if 'mike' not in players: print("Mike, today you'll stay at home")
-# primaryNumbers = [7, 19]
-# if (primaryNumbers[0]/primaryNumbers[0]==1) and (primaryNumbers[1]/primaryNumbers[1]==1): print('Both numbers are primary')
-# primaryNumbers[0] = 16
-# if (primaryNumbers[0]/primaryNumbers[0]==1) or (primaryNumbers[1]/primaryNumbers[1]==1): print('At least one of this numbers is primary')
+# 6.2 
+# number = {
+#     'marsel': 4,
+#     'mike': 11,
+#     'dustin': 666,
+#     'lucas': 12,
+#     'will': 3
+# }
+# for key in number:
+#     print(f"{key} favorite number is {number[key]}")
 
-# 5.3
-# alienColor = ['green', 'yellow', 'red']
-# if 'green' in alienColor: print('You got 5 points')
-# if 'blue' in alienColor: print('You got 5 points')
+# 6.3, 6.4
+# prog = {
+#     'Цикл': 'Повторяющийся при истинном условии блок кода до момента утрачивания условия истинности',
+#     'Условный оператор': 'Выполняет блок кода при истинном условии',
+#     'Кортеж': 'Контейнер, хранящий любое количество значений, которые нельзя изменить',
+#     'Переменная': 'Ссылка на значение любого типа данных',
+#     'Срез': 'Часть словаря'
+# }
+# for key in prog:
+#     print(f"{key} - {prog[key]}\n")
 
-# 5.4
-# alienColor = ['green', 'yellow', 'red']
-# if 'green' in alienColor: print('You got 5 points')
-# else: print('You got 10 points')
-# if 'blue' in alienColor: print('You got 5 points')
-# else: print('You got 10 points')
+# 6.5
+# rivers = {'nile': 'egypt', 'amazonka': 'brazil', 'Volga': 'Russia'}
+# for key, value in rivers.items():
+#     print(f"{key.title()} goes across the {value.title()}")
+# print()
+# for key in rivers:
+#     print(key.title())
+# print()
+# for value in rivers.values(): 
+#     print(value.title())
 
-# 5.5
-# alienColor = ['green', 'yellow', 'red']
-# color = 'blue'
-# if color == 'green': print('You got 5 points')
-# elif color == 'yellow': print('You got 10 points')
-# elif color == 'red': print('You got 15 points')
-# else: print('You missed')
+# 6.6
+# passed = ['robin', 'steve', 'nancy']
+# names = {}
 
-# 5.6
-# age = 21
-# if age >= 2 and age < 4: print('baby')
-# elif age >= 4 and age < 13: print('kid')
-# elif age >= 13 and age < 20: print('teenager')
-# elif age >= 20 and age < 65: print('adult')
-# elif age >= 65: print('elderly') 
+# for p in passed:
+#     names[p] = 'passed' 
 
-# 5.7
-# favoriteFruits = ['banana', 'apple', 'grape', 'orange']
-# if 'banana' in favoriteFruits: print('You love bananas very much!')
-# if 'passion fruit' in favoriteFruits: print('You love passion fruits very much!')
-# if 'peach' in favoriteFruits: print('You love peaches very much!')
-# if 'grape' in favoriteFruits: print('You love grape very much!')
+# names['jonathan'] = 'no'
+# names['Eddie'] = 'no'
 
-# 5.8
-# users = ['max', 'admin', 'henry', 'alice', 'cobe']
-# for user in users:
-#     if user == 'admin': print(f"Hello, {user}, want to get the work status?")
-#     else: print(f"Hello, {user}, thanks for logining in our system")
+# for k, v in names.items():
+#     if(v == 'passed'): print(f"Thanks for taking part, {k.title()}")
+#     else: print(f"Please, take part, {k.title()}")
 
-# 5.9
-# users = ['jessica']
-# if users:
-#     for user in users: print(f"Hello, {user}")
-# else: print("We need to add some users")
+# 6.7 
+# player1 = {'firstName': 'Simeon', 'lastName': 'Nikolov', 'age': 19, 'city': 'Novosibirsk'}
+# player2 = {'firstName': 'Maxim', 'lastName': 'Mikhailov', 'age': 33, 'city': 'Kazan'}
+# player3 = {'firstName': 'Earvin', 'lastName': 'Ngapeth', 'age': 34, 'city': 'Paris'}
 
-# 5.10
-# currentUsers = ['mike', 'lukas', 'will', 'dustin', 'eleven']
-# newUsers = ['Max', 'Steve', 'Dustin', 'Mike', 'Nancy']
-# for user in newUsers:
-#     if user.lower() in currentUsers:
-#         print("You should choose other name")
-#     else: 
-#         print("Welcome!")
+# players = [player1, player2, player3]
+# for player in players:
+#     print(f"My name is {player['firstName']} {player['lastName']}, I'm {player['age']} years old and I'm living in {player['city']}")
 
-# 5.11
-# for num in range(1, 10):
-#     if num == 1:
-#         print(f"{num}st")
-#     elif num == 2:
-#         print(f"{num}nd")
-#     elif num == 3:
-#         print(f"{num}rd")
-#     else: print(f"{num}th")
+# 6.8
+# pet1 = {'animal': 'cat', 'owner': 'Mike', 'name': 'Jessy'}
+# pet2 = {'animal': 'dog', 'owner': 'Kyle', 'name': 'Sparky'}
+# pet3 = {'animal': 'fox', 'owner': 'Rebecca', 'name': 'Fenec'}
+
+# pets = [pet1, pet2, pet3]
+# for pet in pets:
+#     print(f"This is the {pet['animal']} {pet['name'].title()}, {pet['owner']} is its owner")
+
+
+# 6.9
+# player1 = {'firstName': 'Simeon', 'lastName': 'Nikolov', 'age': 19, 'city': 'Novosibirsk'}
+# player2 = {'firstName': 'Maxim', 'lastName': 'Mikhailov', 'age': 33, 'city': 'Kazan'}
+# player3 = {'firstName': 'Earvin', 'lastName': 'Ngapeth', 'age': 34, 'city': 'Paris'}
+
+# favoritePlaces = ['egypt', 'maldives', 'spain', 'fiji']
+# player1['place'] = [favoritePlaces[0]]
+# player2['place'] = [favoritePlaces[1], favoritePlaces[2]]
+# player3['place'] = [favoritePlaces[3]]
+
+# players = [player1, player2, player3]
+# for player in players:
+#     print(f"{player['firstName']} favorite places are: ")
+#     for place in player['place']:
+#         print(f"\t{place}")
+
+# 6.10
+# number = {
+#     'marsel': [4, 19],
+#     'mike': [11, 21, 31],
+#     'dustin': [666],
+#     'lucas': [12, 10],
+#     'will': [1, 2, 3]
+# }
+
+# for k, v in number.items():
+#     print(f"{k} favorite numbers are: ")
+#     for i in v:
+#         print(f"\t{i}")
+#     print()
+
+# 6.11
+# cities = {
+#     'Moscow': {
+#         'country': 'russia',
+#         'population': '13000000',
+#         'fact': 'There are more than 100 parks and gardens in Moscow'
+#     },
+#     'Rome': {
+#         'country': 'Italy',
+#         'population': '2700000',
+#         'fact': 'There are more than 2000 fontains in Rome'
+#     },
+#     'Madrid': {
+#         'country': 'Spain',
+#         'population': '3500000',
+#         'fact': 'Madrid located on a height if 650m over the sea'
+#     }
+# }
+
+# for k, v in cities.items():
+#     print(f"{k} is a city in the {v['country']}. Population there is {v['population']} people. {v['fact']}")
+
+# 6.12
+number = {
+    'marsel': [4, 19],
+    'mike': [11, 21, 31],
+    'dustin': [666],
+    'lucas': [12, 10],
+    'will': [1, 2, 3]
+}
+
+for k, v in number.items():
+    print(f"{k} has {len(v)} favorite naumbers. The sum of this numbers is {sum(v)}")
