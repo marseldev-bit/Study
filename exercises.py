@@ -1,139 +1,295 @@
-# 8. Функции
+# 9. Классы
 
-# 8.1
-# def message():
-#     print('Функции в программировании призваны выполнять определнное действие, повтоярющееся в коде несколько или более раз.')
+# 9.1, 9.2
+# class Restaurant:
+#     def __init__(self, restaurantName, cuisineType):
+#         self.name = restaurantName
+#         self.cuisine = cuisineType
+#     def describeRestaurant(self):
+#         print(f"There are dishes of {self.cuisine} cuisine in {self.name} restaurant")
+#     def openRestaurant(self):
+#         print(f"{self.name} is open now!")
+    
+# chivalry = Restaurant('Chivalry', 'England')
+# print(f"I'm working in {chivalry.name} restaurant. There are dishes of {chivalry.cuisine} cuisine.")
+# chivalry.describeRestaurant()
+# chivalry.openRestaurant()
 
-# message()
+# verity = Restaurant('Verity', 'Wales')
+# print()
+# verity.describeRestaurant()
 
-# 8.2
-# def favoriteBook(title):
-#     print(f"One of my favorite books is {title}")
+# regal = Restaurant('Regal', 'German')
+# print()
+# regal.describeRestaurant()
 
-# favoriteBook('Martin Eden')
-
-# 8.3, 8.4
-# def makeShirt(text = 'I love Python', size = 'L'):
-#     print(f"You ordered {size.upper()} size shirt with text: {text}")
-
-# makeShirt('Stay hard', 'xl')
-# makeShirt()
-
-# 8.5
-# def describeCity (city, country = 'Russia'):
-#     print(f"{city} located in {country}")
-
-# describeCity('Moscow')
-# describeCity(city='Kazan')
-# describeCity('Rome', 'Italy')
-
-# 8.6
-# def city_country(city, country):
-#     return f'{city.title()}, {country.title()}'
-
-# print(city_country('canberra', 'australia'))
-# print(city_country(country='germany', city='berlin'))
-# print(city_country(city='ottawa', country='canada'))
-
-# 8.7, 8.8
-# def makeAlbum(name, title, soundtracks=None):
-#     album = {'name': name, 'title': title}
-#     if soundtracks: album['soundtracks'] = soundtracks
-#     return album
-
-# for i in range(0, 3):
-#     musicAlbum = makeAlbum(input(), input())
-#     print(f"{musicAlbum['name']} has album '{musicAlbum['title']}'")
-
-# album = makeAlbum('Noize MC', 'Новый альбом', '21')
-# print(f"{album['name']} has album '{album['title']}' and there are {album['soundtracks']} soundtracks in it")
-
-# 8.9
-# def messages(mess):
-#     for m in mess: print(m)
-
-# message = ['Hello, Dusty!', 'I hope you fed our cat.', "I'll be late today", 'Good night!']
-# messages(message)
-
-# 8.10
-# def sendMessages(mess, smess):
-#     for i in range(len(mess)): 
-#         smess.append(mess.pop())
-#     for m in smess: print(m)
-
-# message = ['Hello, Dusty!', 'I hope you fed our cat.', "I'll be late today", 'Good night!']
-# sentMessages = []
-# sendMessages(message, sentMessages)
-# print(f'{message}\n{sentMessages}')
-
-# 8.11 (Данную задачу надо было выполнить, использовав передачу в качестве параметра среза списка, но у меня почему-то не работает)
-# def sendMessages(mess, smess):
-#     for m in mess:
-#         print(m)
-#         smess.append(m)
-
-# message = ['Hello, Dusty!', 'I hope you fed our cat.', "I'll be late today", 'Good night!']
-# sentMessages = []
-# sendMessages(message, sentMessages)
-# print(f'{message}\n{sentMessages}')
-
-# 8.12
-# def sandwich(*comp):
-#     print(f"In this sandwich we have:")
-#     for c in comp: print(f"- {c}")
-
-# sandwich('cheese', 'meat', 'pickles', 'sauce')
-
-# 8.13 (Если в **параметр такого типа передавать без ключа (например: не sex='male', а просто 'male'), то создастся кортеж, иначе создастся словарь)
-# def buildProfile(firstName, lastName, **info):
-#     info['firstName'] = firstName
-#     info['lastName'] = lastName
-#     return info
-
-# prof = buildProfile('Angel', 'Ramirez', sex='male', country='argentina')
-
-# 8.14
-# def car(brand, model, **info):
-#     info['brand'] = brand
-#     info['model'] = model
-#     return info
-
-# def showInfo(car):
-#     for key, value in car.items():
-#         if(key == 'brand'): print(f"This model of {value} named {car['model']}")
-#         elif(key == 'model'): continue
+# 9.3
+# class User:
+#     def __init__(self, firstName, lastName, age, sex):
+#         self.fName = firstName
+#         self.lName = lastName
+#         self.age = age
+#         self.sex = sex
+#     def describeUser(self):
+#         if (self.sex).lower() == 'female':
+#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old woman")
+#         elif (self.sex).lower() == 'male':
+#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old man")
 #         else:
-#             print(value)     
+#             print(f"{(self.fName).title()} {(self.lName).title()} is {self.age} years old")
+#     def greetUser(self):
+#         print(f"Nice to meet you, {(self.fName).title()}!")
 
-# honda = car('honda', 'accord', color='grey', transmission='manual transmission')
-# showInfo(honda)
-# print(honda)
+# kate = User('kate', 'dusfill', 23, 'female')
+# kate.describeUser()
+# kate.greetUser()
+# print()
 
-# 8.15
-# from modul import car
-# from modul import showInfo as info
+# fil = User('filipp', 'fuko', 56, 'Male')
+# fil.describeUser()
+# fil.greetUser()
+# print()
 
-# toyota = car('toyota', 'supra', color='blue', wheel='right')
-# info(toyota)
+# fitz = User('fitz', 'chivalry', 16, '')
+# fitz.describeUser()
+# fitz.greetUser()
+        
+# 9.4
+# class Restaurant:
+#     def __init__(self, restaurantName, cuisineType):
+#         self.name = restaurantName
+#         self.cuisine = cuisineType
+#         self.served = 0
+#     def describeRestaurant(self):
+#         print(f"There are dishes of {self.cuisine} cuisine in {self.name} restaurant")
+#     def openRestaurant(self):
+#         print(f"{self.name} is open now!")
+#     def setServed(self, num):
+#         self.served = num
+#     def incrementServed(self, inc):
+#         self.served += inc
+    
+# chivalry = Restaurant('Chivalry', 'England')
+# print(f"I'm working in {chivalry.name} restaurant. There are dishes of {chivalry.cuisine} cuisine.")
+# chivalry.describeRestaurant()
+# chivalry.openRestaurant()
+# print(chivalry.served)
+# chivalry.served = 2
+# print(chivalry.served)
+# chivalry.setServed(16)
+# print(chivalry.served)
+# chivalry.incrementServed(130)
+# print(chivalry.served)
 
-# 8.16
-# import modul
-# print(modul.car('toyota', 'supra', color='blue', wheel='right'))
+# 9.5
+# class User:
+#     def __init__(self, firstName, lastName, age, sex):
+#         self.fName = firstName
+#         self.lName = lastName
+#         self.age = age
+#         self.sex = sex
+#         self.loginAttempts = 0
+#     def describeUser(self):
+#         if (self.sex).lower() == 'female':
+#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old woman")
+#         elif (self.sex).lower() == 'male':
+#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old man")
+#         else:
+#             print(f"{(self.fName).title()} {(self.lName).title()} is {self.age} years old")
+#     def greetUser(self):
+#         print(f"Nice to meet you, {(self.fName).title()}!")
+#     def incAttempt(self):
+#         self.loginAttempts += 1
+#     def resetAttempts(self):
+#         self.loginAttempts = 0 
 
-# from modul import car
-# print(car('toyota', 'supra', color='blue', wheel='right'))
+# kate = User('kate', 'dusfill', 23, 'female')
+# print("The password id 'Katie123'")
+# kate.greetUser()
+# while True:
+#     password = input("Please, enter the password: ")
+#     if password == 'Katie123': 
+#         print("Welcome!")
+#         kate.resetAttempts()
+#         break
+#     else:
+#         print("Password isn't correct, try again")
+#         kate.incAttempt()
+#         print(f"Failed login attempts: {kate.loginAttempts}")
 
-# from modul import car as c
-# print(c('toyota', 'supra', color='blue', wheel='right'))
+# 9.6
+# class Restaurant:
+#     def __init__(self, restaurantName, cuisineType):
+#         self.name = restaurantName
+#         self.cuisine = cuisineType
+#         self.served = 0
+#     def describeRestaurant(self):
+#         print(f"There are dishes of {self.cuisine} cuisine in {self.name} restaurant")
+#     def openRestaurant(self):
+#         print(f"{self.name} is open now!")
+#     def setServed(self, num):
+#         self.served = num
+#     def incrementServed(self, inc):
+#         self.served += inc
+    
+# class IceCreamStand(Restaurant):
+#     def __init__(self, restaurantName, cuisineType, flavors):
+#         super().__init__(restaurantName, cuisineType)
+#         self.flavors = flavors
+    
+#     def showFlavors(self):
+#         print(f"In {self.name} we have this ice cream flavors:")
+#         for flavor in self.flavors:
+#             print(f"- {flavor}")
+    
 
-# import modul as m
-# print(m.car('toyota', 'supra', color='blue', wheel='right'))
+# lincoln = IceCreamStand('Lincoln', 'Ice cream', ['fistachio', 'chocolate', 'raspberry'])
+# lincoln.describeRestaurant()
+# print()
+# lincoln.showFlavors()
+# lincoln.openRestaurant()
 
-from modul import *
-print(car('toyota', 'supra', color='blue', wheel='right'))
+# 9.7, 9.8
+# class User:
+#     def __init__(self, firstName, lastName, age, sex):
+#         self.fName = firstName
+#         self.lName = lastName
+#         self.age = age
+#         self.sex = sex
+#     def describeUser(self):
+#         if (self.sex).lower() == 'female':
+#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old woman")
+#         elif (self.sex).lower() == 'male':
+#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old man")
+#         else:
+#             print(f"{(self.fName).title()} {(self.lName).title()} is {self.age} years old")
+#     def greetUser(self):
+#         print(f"Nice to meet you, {(self.fName).title()}!")
+
+# class Admin(User):
+#     def __init__(self, firstName, lastName, age, sex):
+#         super().__init__(firstName, lastName, age, sex)
+#         self.priv = Privileges()
+
+# class Privileges:
+#     def __init__(self, privileges=''):
+#         self.priv = privileges
+#     def showPriveleges(self):
+#         print(f"Admin has this privileges:")
+#         for p in self.priv:
+#             print(f" - {p}")
 
 
+# ray = Admin('Ray', 'Ollback', 30, 'male')
+# ray.priv.priv = ['Use data', 'Ban users', 'Add rules']
+# ray.greetUser()
+# ray.describeUser()
+# ray.priv.showPriveleges()
 
+# 9.9
+# class Car:
+#     """Simple car type"""
+#     def __init__(self, firm, model, year):
+#         self.firm = firm
+#         self.model = model
+#         self.year = year
+#         self.run = 0
+    
+#     def getInfo(self):
+#         info = f"{self.year} {(self.firm).title()} {(self.model).title()}"
+#         return info
+            
+#     def getRun(self):
+#         return self.run
+    
+# class ElectricCar(Car):
+#     """Electric car type"""
+#     def __init__(self, firm, model, year):
+#         super().__init__(firm, model, year)
+#         self.battery = Battery()
 
+# class Battery:
+#     def __init__(self, battery = 40):
+#         self.battery = battery
+#     def describeBattery(self, car):
+#         print(f"{car} has a {self.battery}-kWh battery")
+#     def batteryRange(self):
+#         powerReserve = 300
+#         if self.battery <= 40 and self.battery > 10:
+#             powerReserve = 300
+#         elif self.battery > 40 and self.battery < 60:
+#             powerReserve = 500
+#         elif self.battery > 60:
+#             powerReserve = 800
+#         print(f"Its' power reserve is {powerReserve} kWh")
+#     def upgradeBattery(self):
+#         if self.battery < 80:
+#             self.battery = 80
+#             print(f"Battery upgraded. Now it's {self.battery} kWh")
+    
+# zeekr = ElectricCar('Zeekr', '001', '2025')
+# print(zeekr.getInfo())
+# zeekr.battery.describeBattery(zeekr.getInfo())
+# zeekr.battery.batteryRange()
+# print()
+# zeekr.battery.upgradeBattery()
+# zeekr.battery.batteryRange()
 
+# 9.10
+# from modulClass import Restaurant as R
+     
+# chivalry = R('Chivalry', 'England')
+# print(f"I'm working in {chivalry.name} restaurant. There are dishes of {chivalry.cuisine} cuisine.")
+# chivalry.describeRestaurant()
+# chivalry.openRestaurant()
+
+# 9.11 
+# from modulClass import Admin, User, Privileges
+
+# ray = Admin('Ray', 'Ollback', 30, 'male')
+# ray.priv.priv = ['Use data', 'Ban users', 'Add rules']
+# ray.greetUser()
+# ray.describeUser()
+# ray.priv.showPriveleges()
+
+# 9.13
+# from random import randint 
+
+# class Die:
+#     def __init__(self, sides = 6):
+#         self.sides = sides
+#     def rollDie(self):
+#         rand = randint(1, self.sides)
+#         print(f"Rolling... There is {rand}")
+
+# cube1 = Die()
+# cube2 = Die(10)
+# cube3 = Die(20)
+
+# cubes = [cube1, cube2, cube3]
+
+# for cube in cubes:
+#     for i in range(10):
+#         cube.rollDie()
+#     print()
+
+# 9.14, 9.15
+from random import choice
+
+lotery = [5, 't', 6, 9, 'o', 1, 2, 7, 'v', 4, 3, 'w', 'x', 8]
+win = ''
+for i in range(4): win += str(choice(lotery))
+print(f"Ticket '{win}' is winning!")
+
+myTicket = ''
+for i in range(4): myTicket += str(choice(lotery))
+loteryAnalysis = 0
+
+while True:
+    win = ''
+    for i in range(4): win += str(choice(lotery))
+    if win == myTicket: break
+    loteryAnalysis += 1
+
+print(f"Your ticket was {myTicket}. It took {loteryAnalysis} generations to your ticket was winning")
 
