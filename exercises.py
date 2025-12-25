@@ -1,295 +1,118 @@
-# 9. Классы
+# 10. Файлы и исключения
+from pathlib import Path
+import json
 
-# 9.1, 9.2
-# class Restaurant:
-#     def __init__(self, restaurantName, cuisineType):
-#         self.name = restaurantName
-#         self.cuisine = cuisineType
-#     def describeRestaurant(self):
-#         print(f"There are dishes of {self.cuisine} cuisine in {self.name} restaurant")
-#     def openRestaurant(self):
-#         print(f"{self.name} is open now!")
-    
-# chivalry = Restaurant('Chivalry', 'England')
-# print(f"I'm working in {chivalry.name} restaurant. There are dishes of {chivalry.cuisine} cuisine.")
-# chivalry.describeRestaurant()
-# chivalry.openRestaurant()
+# 10.1, 10.2, 10.3
+# py = Path('files/piDigits.txt')
+# cont = py.read_text()
+# print(cont)
 
-# verity = Restaurant('Verity', 'Wales')
-# print()
-# verity.describeRestaurant()
+# message = ''
+# for line in cont.splitlines():
+#     line = line[1:]
+#     line = line.replace('.', '')
+#     line = line.replace('Python', 'Assembler')
+#     line = line.strip()
+#     message += f'{line}, '
+# print(message)
 
-# regal = Restaurant('Regal', 'German')
-# print()
-# regal.describeRestaurant()
+# 10.4
+# path = Path("files/piDigits.txt")
 
-# 9.3
-# class User:
-#     def __init__(self, firstName, lastName, age, sex):
-#         self.fName = firstName
-#         self.lName = lastName
-#         self.age = age
-#         self.sex = sex
-#     def describeUser(self):
-#         if (self.sex).lower() == 'female':
-#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old woman")
-#         elif (self.sex).lower() == 'male':
-#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old man")
-#         else:
-#             print(f"{(self.fName).title()} {(self.lName).title()} is {self.age} years old")
-#     def greetUser(self):
-#         print(f"Nice to meet you, {(self.fName).title()}!")
+# guest = input("Hello! What is your name? ")
+# path.write_text(guest)
 
-# kate = User('kate', 'dusfill', 23, 'female')
-# kate.describeUser()
-# kate.greetUser()
-# print()
+# 10.5
+# guests = Path('files/piDigits.txt')
+# guestList = ''
+# for i in range(1, 6):
+#     name = input("Please, enter your name: ")
+#     guestList += f"{i}. {name.title()}\n"
+#     print(f"Nice to see you, {name.title()}")
+# guests.write_text(guestList.rstrip())
+# print(guests.read_text())
 
-# fil = User('filipp', 'fuko', 56, 'Male')
-# fil.describeUser()
-# fil.greetUser()
-# print()
-
-# fitz = User('fitz', 'chivalry', 16, '')
-# fitz.describeUser()
-# fitz.greetUser()
-        
-# 9.4
-# class Restaurant:
-#     def __init__(self, restaurantName, cuisineType):
-#         self.name = restaurantName
-#         self.cuisine = cuisineType
-#         self.served = 0
-#     def describeRestaurant(self):
-#         print(f"There are dishes of {self.cuisine} cuisine in {self.name} restaurant")
-#     def openRestaurant(self):
-#         print(f"{self.name} is open now!")
-#     def setServed(self, num):
-#         self.served = num
-#     def incrementServed(self, inc):
-#         self.served += inc
-    
-# chivalry = Restaurant('Chivalry', 'England')
-# print(f"I'm working in {chivalry.name} restaurant. There are dishes of {chivalry.cuisine} cuisine.")
-# chivalry.describeRestaurant()
-# chivalry.openRestaurant()
-# print(chivalry.served)
-# chivalry.served = 2
-# print(chivalry.served)
-# chivalry.setServed(16)
-# print(chivalry.served)
-# chivalry.incrementServed(130)
-# print(chivalry.served)
-
-# 9.5
-# class User:
-#     def __init__(self, firstName, lastName, age, sex):
-#         self.fName = firstName
-#         self.lName = lastName
-#         self.age = age
-#         self.sex = sex
-#         self.loginAttempts = 0
-#     def describeUser(self):
-#         if (self.sex).lower() == 'female':
-#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old woman")
-#         elif (self.sex).lower() == 'male':
-#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old man")
-#         else:
-#             print(f"{(self.fName).title()} {(self.lName).title()} is {self.age} years old")
-#     def greetUser(self):
-#         print(f"Nice to meet you, {(self.fName).title()}!")
-#     def incAttempt(self):
-#         self.loginAttempts += 1
-#     def resetAttempts(self):
-#         self.loginAttempts = 0 
-
-# kate = User('kate', 'dusfill', 23, 'female')
-# print("The password id 'Katie123'")
-# kate.greetUser()
+# 10.6, 10.7
 # while True:
-#     password = input("Please, enter the password: ")
-#     if password == 'Katie123': 
-#         print("Welcome!")
-#         kate.resetAttempts()
-#         break
+#     n1 = input("First number: ")
+#     if n1 == 'q': break
+#     n2 = input("Second number: ")
+#     if n2 == 'q': break
+#     try:
+#         print(f"The sum is {int(n1)+int(n2)}")
+#     except ValueError:
+#         print('Please, enter the number.')
+
+# 10.8
+# cats = Path('files/cats.txt')
+# dogs = Path('files/dogs.txt')
+
+# try:
+#     catContent = cats.read_text()
+# except FileNotFoundError:
+#     print(f"File {cats} doesn't exist!")
+# else:
+#     for line in catContent.splitlines():
+#         print(f"Cat's name is {line}")
+
+# try:
+#     dogContent = dogs.read_text()
+# except FileNotFoundError:
+#     print(f"File {dogs} doesn't exist!")
+# else:
+#     for line in dogContent.splitlines():
+#         print(f"Dog's name is {line}")
+
+# 10.10
+# def countWord(path, word):
+#     try:
+#         content = path.read_text(encoding='utf-8')
+#     except FileNotFoundError:
+#         return f"File {path} doesn't exist"
 #     else:
-#         print("Password isn't correct, try again")
-#         kate.incAttempt()
-#         print(f"Failed login attempts: {kate.loginAttempts}")
-
-# 9.6
-# class Restaurant:
-#     def __init__(self, restaurantName, cuisineType):
-#         self.name = restaurantName
-#         self.cuisine = cuisineType
-#         self.served = 0
-#     def describeRestaurant(self):
-#         print(f"There are dishes of {self.cuisine} cuisine in {self.name} restaurant")
-#     def openRestaurant(self):
-#         print(f"{self.name} is open now!")
-#     def setServed(self, num):
-#         self.served = num
-#     def incrementServed(self, inc):
-#         self.served += inc
+#         return content.lower().count(f'{word} ')
     
-# class IceCreamStand(Restaurant):
-#     def __init__(self, restaurantName, cuisineType, flavors):
-#         super().__init__(restaurantName, cuisineType)
-#         self.flavors = flavors
-    
-#     def showFlavors(self):
-#         print(f"In {self.name} we have this ice cream flavors:")
-#         for flavor in self.flavors:
-#             print(f"- {flavor}")
-    
-
-# lincoln = IceCreamStand('Lincoln', 'Ice cream', ['fistachio', 'chocolate', 'raspberry'])
-# lincoln.describeRestaurant()
-# print()
-# lincoln.showFlavors()
-# lincoln.openRestaurant()
-
-# 9.7, 9.8
-# class User:
-#     def __init__(self, firstName, lastName, age, sex):
-#         self.fName = firstName
-#         self.lName = lastName
-#         self.age = age
-#         self.sex = sex
-#     def describeUser(self):
-#         if (self.sex).lower() == 'female':
-#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old woman")
-#         elif (self.sex).lower() == 'male':
-#             print(f"{(self.fName).title()} {(self.lName).title()} is a {self.age} years old man")
-#         else:
-#             print(f"{(self.fName).title()} {(self.lName).title()} is {self.age} years old")
-#     def greetUser(self):
-#         print(f"Nice to meet you, {(self.fName).title()}!")
-
-# class Admin(User):
-#     def __init__(self, firstName, lastName, age, sex):
-#         super().__init__(firstName, lastName, age, sex)
-#         self.priv = Privileges()
-
-# class Privileges:
-#     def __init__(self, privileges=''):
-#         self.priv = privileges
-#     def showPriveleges(self):
-#         print(f"Admin has this privileges:")
-#         for p in self.priv:
-#             print(f" - {p}")
+# def showWord(name, path, word):
+#     if isinstance(countWord(path, word), int):
+#         print(f"In book '{name}' the word '{word}' meets {countWord(path, word)} times")
+#     else:
+#         print(countWord(path, word))
 
 
-# ray = Admin('Ray', 'Ollback', 30, 'male')
-# ray.priv.priv = ['Use data', 'Ban users', 'Add rules']
-# ray.greetUser()
-# ray.describeUser()
-# ray.priv.showPriveleges()
+# books = {'Martin Eden': Path('files/martinEden.txt'), 'Jane Eyre': Path('files/janeEyre.txt'), 'Dead Souls': Path('files/deadSouls.txt')}
 
-# 9.9
-# class Car:
-#     """Simple car type"""
-#     def __init__(self, firm, model, year):
-#         self.firm = firm
-#         self.model = model
-#         self.year = year
-#         self.run = 0
-    
-#     def getInfo(self):
-#         info = f"{self.year} {(self.firm).title()} {(self.model).title()}"
-#         return info
-            
-#     def getRun(self):
-#         return self.run
-    
-# class ElectricCar(Car):
-#     """Electric car type"""
-#     def __init__(self, firm, model, year):
-#         super().__init__(firm, model, year)
-#         self.battery = Battery()
+# for key, value in books.items():
+#     showWord(key, value, 'me')
 
-# class Battery:
-#     def __init__(self, battery = 40):
-#         self.battery = battery
-#     def describeBattery(self, car):
-#         print(f"{car} has a {self.battery}-kWh battery")
-#     def batteryRange(self):
-#         powerReserve = 300
-#         if self.battery <= 40 and self.battery > 10:
-#             powerReserve = 300
-#         elif self.battery > 40 and self.battery < 60:
-#             powerReserve = 500
-#         elif self.battery > 60:
-#             powerReserve = 800
-#         print(f"Its' power reserve is {powerReserve} kWh")
-#     def upgradeBattery(self):
-#         if self.battery < 80:
-#             self.battery = 80
-#             print(f"Battery upgraded. Now it's {self.battery} kWh")
-    
-# zeekr = ElectricCar('Zeekr', '001', '2025')
-# print(zeekr.getInfo())
-# zeekr.battery.describeBattery(zeekr.getInfo())
-# zeekr.battery.batteryRange()
-# print()
-# zeekr.battery.upgradeBattery()
-# zeekr.battery.batteryRange()
+# 10.11, 10.12
+# path = Path('files/favNum.json')
+# if path.exists():
+#     content = json.loads(path.read_text())
+#     print(f"I know your favorite number! It's {content}")
+# else:
+#     path.write_text(json.dumps(input("What's your favorite number? ")))
 
-# 9.10
-# from modulClass import Restaurant as R
-     
-# chivalry = R('Chivalry', 'England')
-# print(f"I'm working in {chivalry.name} restaurant. There are dishes of {chivalry.cuisine} cuisine.")
-# chivalry.describeRestaurant()
-# chivalry.openRestaurant()
+# 10.13
+def addPerson(path):
+    path = Path('files/personInfo.json')
+    me = {}
+    me['name'] = input("What's your name? ")
+    try: 
+        me['age'] = int(input("How old are you? "))
+    except ValueError:
+        print("Please, enter the number")
+        me['age'] = int(input("How old are you? "))
+    me['sex'] = input("Are you a male or female? ")
+    path.write_text(json.dumps(me))
 
-# 9.11 
-# from modulClass import Admin, User, Privileges
-
-# ray = Admin('Ray', 'Ollback', 30, 'male')
-# ray.priv.priv = ['Use data', 'Ban users', 'Add rules']
-# ray.greetUser()
-# ray.describeUser()
-# ray.priv.showPriveleges()
-
-# 9.13
-# from random import randint 
-
-# class Die:
-#     def __init__(self, sides = 6):
-#         self.sides = sides
-#     def rollDie(self):
-#         rand = randint(1, self.sides)
-#         print(f"Rolling... There is {rand}")
-
-# cube1 = Die()
-# cube2 = Die(10)
-# cube3 = Die(20)
-
-# cubes = [cube1, cube2, cube3]
-
-# for cube in cubes:
-#     for i in range(10):
-#         cube.rollDie()
-#     print()
-
-# 9.14, 9.15
-from random import choice
-
-lotery = [5, 't', 6, 9, 'o', 1, 2, 7, 'v', 4, 3, 'w', 'x', 8]
-win = ''
-for i in range(4): win += str(choice(lotery))
-print(f"Ticket '{win}' is winning!")
-
-myTicket = ''
-for i in range(4): myTicket += str(choice(lotery))
-loteryAnalysis = 0
-
-while True:
-    win = ''
-    for i in range(4): win += str(choice(lotery))
-    if win == myTicket: break
-    loteryAnalysis += 1
-
-print(f"Your ticket was {myTicket}. It took {loteryAnalysis} generations to your ticket was winning")
-
+person = Path('files/personInfo.json')
+if person.exists():
+    print("Info about you:")
+    print(json.loads(person.read_text()))
+    correct = input("Is this information correct? y/n: ")
+    if correct == 'y':
+        print('Welcome!')
+    elif correct == 'n':
+        addPerson(person)
+else:
+    addPerson(person)
